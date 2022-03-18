@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+    <title>Website</title>
+    <meta name="description" content="HTML tutorial">
+    <meta name="keywords"
+    content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Rui Jesus">
+    <meta http-equiv="refresh" content="30">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">    
+</head>
+
+<body>
+<header>
+<div id="drawer">
+  <nav>
+    <a href="#unordered"> Surf</a>
+    <a href="#ordered"> Community Shop</a>
+    <a href="#table"> Leaderboard</a>
+    <a href="#images"> Images</a>
+    <a href="#video"> Video</a>
+  </nav>
+  </div>
+
+<a id="menu_icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z" fill="white"/>
+  </svg>
+</a>    
+
+<h1>Surf Jagoz</h1>
+<p> Surf News </p>
+<hr>
+</header>
+
+<nav id="tabletPC" class="col-3">
+<a href="#unordered"> Surf</a>
+<br/>
+<a href="#ordered"> Community Shop</a>
+<br/>
+<a href="#color"> Surfers</a>
+<br/>
+<a href="#table"> Leaderboard</a>
+<br/>
+<a href="#images"> Images</a>
+<br/>
+<a href="#video"> Video</a>
+<br/>
+</nav>
+
+<div id="container" class="col-9">
+<section>
+    <section class="slideshow-container">
+    <article class="mySlides" class="fade">
+    <figure>
+    <img src="images/4.jpg">
+    </figure>
+    </article>
+    <article class="mySlides" class="fade">
+    <figure>
+    <img src="images/2.jpg">
+    </figure>
+    </article>
+    <article class="mySlides" class="fade">
+    <figure>
+    <img src="images/3.jpg">
+    </figure>
+    </article>        
+    
+    <div class="dotpoints">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>      
+</section>
+
+<section>
+<a name="unordered"></a>
+<h2> Surf </h2>
+<i>Here you can find some information about the sport such as: </i>
+<ul>
+<li> History, </li>
+<li> GOAT surfers,</li>
+<li> Types of boards,</li>
+<li> Best beaches </li>
+<li> Competitions.
+</li>
+</ul>
+</section>
+
+<section>
+<a name="ordered"></a>
+<h2> Community Shop </h2>
+<i> You can buy our T-shirts and hoodies! </i>
+<ol>
+<li><u> T-shirts </u></li>
+<li><u> Hoodies </u></li>
+</ol>
+</section>
+
+<section>
+<a name="color"></a>
+<h2>Surfers</h2>
+<p> Information and Biography about the surfers </p>
+</section>
+
+<section>
+    <a name="table"></a>
+    <h2>Leaderboard </h2>
+    <p> This section will give you more details about the ratings </p>
+    
+    <table style="width:100%">
+        <tr>
+          <th>First Place</th>
+          <th>Second Place</th>
+          <th>Third Place</th>
+        </tr>
+        <tr>
+          <td>Kanoa Igarashi</td>
+          <td>Kelly Slater</td>
+          <td>Barron Mamiya</td>
+        </tr>
+        <tr>
+          <td>17,290</td>
+          <td>14,650</td>
+          <td>14,650</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+<a name="images"></a>
+<h2> Images</h2>    
+<img src ="https://static.globalnoticias.pt/dn/image.jpg?brand=DN&type=generate&guid=d6405e39-19cc-46bb-8070-36a49c076340&w=800&h=450&t=20220206004436"width="800" height="auto">
+<img src ="https://if15.com.br/wp-content/uploads/2022/02/Kelly-Slater_Pipe22_05185_Lawrence-1024x682.jpg"width="800" height="auto">
+</section>
+
+<section>
+<a name="video"></a>
+<h2> Video</h2>    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/a0YU63qIFmc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</section>
+
+</div>
+    
+<aside class="col-2">
+<h3>Aside</h3>
+<p>This site doesn't have annoying ads! Just surf vibes :D
+</p>
+</aside>
+        
+<footer>
+<h2>Developed by Diogo Henriques</h2>
+</footer> 
+
+<script>
+let menu_icon = document.querySelector('#menu_icon');
+let container = document.querySelector("#container");
+let drawer = document.querySelector('#drawer');
+menu_icon.addEventListener('click', function (e) {
+drawer.classList.toggle('open');
+e.stopPropagation();
+});
+container.addEventListener('click', function () {
+drawer.classList.remove('open');
+});
+</script>
+
+<script>
+let slideIndex = 0;
+showSlides();
+function showSlides() {
+let i = null;
+let slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";
+}
+slideIndex++;
+if (slideIndex> slides.length) {slideIndex = 1}  
+for (i = 0; i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
+setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+</script>
+
+</body>
+
+</html>
